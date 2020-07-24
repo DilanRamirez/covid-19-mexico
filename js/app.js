@@ -21,11 +21,11 @@ require(["esri/Map", "esri/views/MapView", "esri/Graphic"], function (
     const data = await fetch(url);
     if (data.ok) {
       const mexicoData = await data.json();
-      console.log(mexicoData);
+      // console.log(mexicoData);
       const parsedData = mexicoData.records.map((item) => item.fields);
-      const polygon = mexicoData.records.map((item) => item.geo_shape);
+      
 
-      console.log(parsedData);
+      // console.log(parsedData);
 
       const dataTable = parsedData.map((dailyData) => ({
         colonia: dailyData.colonia,
@@ -33,7 +33,7 @@ require(["esri/Map", "esri/views/MapView", "esri/Graphic"], function (
         total: dailyData.total,
       }));
 
-      console.log(dataTable);
+      // console.log(dataTable);
 
       const detailData = {
         colonia: parsedData.map((item) => item.colonia),
@@ -51,7 +51,7 @@ require(["esri/Map", "esri/views/MapView", "esri/Graphic"], function (
       const polygonData = {
         coords: detailData.polygon.map((coord) => coord.coordinates[0]),
       };
-      console.log(detailData);
+      // console.log(detailData);
 
       for (var i = 0; i < coordinates.long.length; i++) {
         var polygonFigure = {
@@ -95,6 +95,23 @@ require(["esri/Map", "esri/views/MapView", "esri/Graphic"], function (
       });
     }
   };
-  
+
   getData();
+
+  const getDataChart = async () => {
+    const data = await fetch('https://datos.cdmx.gob.mx/api/records/1.0/search/?dataset=personas-hospitalizadas-covid19&q=&facet=ano&facet=mes');
+    if (data.ok) {
+      const mexicoData = await data.json();
+      console.log(mexicoData)
+
+      const parsedData = mexicoData.records.map((item) => item.fields);
+      const parsedDataDetails = {
+        camas_intubados_totales: parsedData.map((item) => item.camas_intubados_totales),
+        fecha: parsedData.map((item) => item.fecha),
+        hospitalizados_totales: parsedData.map((item) => item.hospitalizados_totales),
+      }
+      console.log(parsedDataDetails)
+    }
+  };
+  getDataChart()
 });
