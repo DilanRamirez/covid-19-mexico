@@ -1,0 +1,90 @@
+#viewDiv {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 70%;
+  left: 0px;
+  position: absolute;
+}
+
+.right-bar {
+  position: absolute;
+  right: 0px;
+  background-color: #424444;
+  width: 30%;
+  height: 100%;
+}
+
+.title-left-bar {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: #eee;
+  text-align: center;
+}
+.table-left-bar {
+  position: relative;
+  background-color: #eee;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-table {
+  width: 95% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: flex !important;
+}
+
+.bootstrap-table .fixed-table-container .fixed-table-body {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 30vh;
+  text-align: center;
+}
+
+.table-title {
+    color: #eee;
+    background-color: #373838;
+}
+
+@media (min-width: 1200px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1140px;
+  }
+}
+:focus {
+    outline: -webkit-focus-ring-color auto 0px;
+  }
+  
+  :active {
+    outline: -webkit-focus-ring-color auto 0px;
+  }
+
+  #viewDiv:focus {
+    outline: -webkit-focus-ring-color auto 0px;
+  }
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
