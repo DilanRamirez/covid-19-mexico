@@ -13,6 +13,8 @@
   background-color: #424444;
   width: 30%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .title-left-bar {
@@ -48,6 +50,32 @@
   background-color: #373838;
 }
 
+.Charts-right {
+  max-width: 95% !important;
+  max-height: 600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 20px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#my-lineChart, #my-pieChart {
+  margin-top: 10px;
+  max-height: 340px !important;
+  max-width: 90% !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#my-pieChart {
+  margin-bottom: 20px !important;
+}
+.pieChart {
+  margin-top: 20px !important;
+}
+
 :focus {
   outline: -webkit-focus-ring-color auto 0px;
 }
@@ -80,23 +108,20 @@
   background: #555;
 }
 
-
 @media (max-width: 400px) {
-  body,html,
+  body,
+  html,
   #viewDiv {
     order: 1;
     padding: 0;
     margin: 0;
   }
-  .mobile-setup{
+  .mobile-setup {
     display: flex !important;
     flex-direction: column !important;
   }
   .right-bar {
     order: 2;
     background-color: #424444;
-    
   }
 }
-
-
